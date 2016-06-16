@@ -41,4 +41,17 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
+	public static void sendDirectMessage(IContext context, testtwitterconnector.proxies.TwitterStatus _twitterStatus)
+	{
+		try
+		{
+			Map<String, Object> params = new HashMap<String, Object>();
+			params.put("TwitterStatus", _twitterStatus == null ? null : _twitterStatus.getMendixObject());
+			Core.execute(context, "TestTwitterConnector.SendDirectMessage", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
 }

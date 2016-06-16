@@ -13,9 +13,15 @@ single account:
 
 You can store this information in an entity or using constants.
 
+### Update twitter status
+
 To post a twitter update, using a microflow as illustrated below. After
 including the connector from the appstore, you can drag and drop the
 *update twitter status* action from your toolbox on your microflow.
+
+![Twitter action in Mendix toolbox][9]
+
+Here's an example how to use the action in a microflow:
 
 ![Post Tweet from microflow][1]
 
@@ -27,6 +33,16 @@ The action needs a few parameters:
 ![Configure tweet action][2]
 
 The action returns a string describing the result status.
+
+### Send direct message
+
+You can send direct message to your followers as follows:
+
+![Send direct message from microflow][7]
+
+Configuration of the action:
+
+![Configure direct message action][8]
 
 ## Development
 
@@ -54,6 +70,7 @@ This connector is licensed under the Apache v2 license.
 2016-jun-16 - revision 1.0
 
 * Update twitter status action using oauth1
+* Added action to send direct message
 
   [1]: docs/images/post_tweet_mf.png
   [2]: docs/images/configure_post_tweet.png
@@ -61,3 +78,6 @@ This connector is licensed under the Apache v2 license.
   [4]: https://apps.twitter.com/
   [5]: https://dev.twitter.com/oauth/overview/introduction
   [6]: http://twitter4j.org/en/index.html
+  [7]: docs/images/send_direct_message.png
+  [8]: docs/images/configure_direct_message.png
+  [9]: docs/images/twitter_toolbox.png

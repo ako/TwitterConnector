@@ -24,7 +24,9 @@ public class TwitterStatus
 		consumerKey("consumerKey"),
 		consumerSecret("consumerSecret"),
 		accessToken("accessToken"),
-		accessTokenSecret("accessTokenSecret");
+		accessTokenSecret("accessTokenSecret"),
+		DirectMessage("DirectMessage"),
+		DirectMessageRecipient("DirectMessageRecipient");
 
 		private java.lang.String metaName;
 
@@ -297,6 +299,78 @@ public class TwitterStatus
 	public final void setaccessTokenSecret(com.mendix.systemwideinterfaces.core.IContext context, String accesstokensecret)
 	{
 		getMendixObject().setValue(context, MemberNames.accessTokenSecret.toString(), accesstokensecret);
+	}
+
+	/**
+	 * @return value of DirectMessage
+	 */
+	public final String getDirectMessage()
+	{
+		return getDirectMessage(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of DirectMessage
+	 */
+	public final String getDirectMessage(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (String) getMendixObject().getValue(context, MemberNames.DirectMessage.toString());
+	}
+
+	/**
+	 * Set value of DirectMessage
+	 * @param directmessage
+	 */
+	public final void setDirectMessage(String directmessage)
+	{
+		setDirectMessage(getContext(), directmessage);
+	}
+
+	/**
+	 * Set value of DirectMessage
+	 * @param context
+	 * @param directmessage
+	 */
+	public final void setDirectMessage(com.mendix.systemwideinterfaces.core.IContext context, String directmessage)
+	{
+		getMendixObject().setValue(context, MemberNames.DirectMessage.toString(), directmessage);
+	}
+
+	/**
+	 * @return value of DirectMessageRecipient
+	 */
+	public final String getDirectMessageRecipient()
+	{
+		return getDirectMessageRecipient(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of DirectMessageRecipient
+	 */
+	public final String getDirectMessageRecipient(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (String) getMendixObject().getValue(context, MemberNames.DirectMessageRecipient.toString());
+	}
+
+	/**
+	 * Set value of DirectMessageRecipient
+	 * @param directmessagerecipient
+	 */
+	public final void setDirectMessageRecipient(String directmessagerecipient)
+	{
+		setDirectMessageRecipient(getContext(), directmessagerecipient);
+	}
+
+	/**
+	 * Set value of DirectMessageRecipient
+	 * @param context
+	 * @param directmessagerecipient
+	 */
+	public final void setDirectMessageRecipient(com.mendix.systemwideinterfaces.core.IContext context, String directmessagerecipient)
+	{
+		getMendixObject().setValue(context, MemberNames.DirectMessageRecipient.toString(), directmessagerecipient);
 	}
 
 	/**

@@ -12,5 +12,6 @@
 
         <!-- for appcloudservices -->
         <dependency org="org.openid4java" name="openid4java" rev="0.9.8"/>
+        <dependency org="commons-lang" name="commons-lang" rev="2.5"/>
     </dependencies>
 </ivy-module>

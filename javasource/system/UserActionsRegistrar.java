@@ -42,6 +42,7 @@ public class UserActionsRegistrar implements EventHandler
 			component.actionRegistry().registerUserAction(appcloudservices.actions.LogOutUser.class);
 			component.actionRegistry().registerUserAction(appcloudservices.actions.StartSignOnServlet.class);
 			component.actionRegistry().registerUserAction(system.actions.VerifyPassword.class);
+			component.actionRegistry().registerUserAction(twitterconnector.actions.SendDirectMessage.class);
 			component.actionRegistry().registerUserAction(twitterconnector.actions.UpdateTwitterStatus.class);
 		}
 	}

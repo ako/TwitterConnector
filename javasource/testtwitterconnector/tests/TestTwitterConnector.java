@@ -32,4 +32,47 @@ public class TestTwitterConnector {
 
         conn.sendTweet(CONSUMER_KEY,CONSUMER_SECRET,ACCESS_TOKEN,ACCESS_TOKEN_SECRET,twitter_message);
     }
+
+    @Test
+    public void testSendMultipleTweets() throws TwitterException, IOException {
+        // get configuration
+        Path input = Paths.get(System.getProperty("user.home") + "/.twitterconnector.cfg");
+        Ini ini = new Ini().read(input);
+        Map<String, String> configs = ini.getSections().get("UnitTesting");
+
+        TwitterConnector conn = new TwitterConnector();
+        final String CONSUMER_KEY = configs.get("consumer_key");
+        final String CONSUMER_SECRET = configs.get("consumer_secret");
+        final String ACCESS_TOKEN = configs.get("access_token");
+        final String ACCESS_TOKEN_SECRET = configs.get("access_token_secret");
+
+        int i=0;
+
+        String twitter_message = String.format("Testing this twitter rest api at %s, count = %d",(new Date()).toString(), i++);
+        conn.sendTweet(CONSUMER_KEY,CONSUMER_SECRET,ACCESS_TOKEN,ACCESS_TOKEN_SECRET,twitter_message);
+        twitter_message = String.format("Testing this twitter rest api at %s, count = %d",(new Date()).toString(), i++);
+        conn.sendTweet(CONSUMER_KEY,CONSUMER_SECRET,ACCESS_TOKEN,ACCESS_TOKEN_SECRET,twitter_message);
+        twitter_message = String.format("Testing this twitter rest api at %s, count = %d",(new Date()).toString(), i++);
+        conn.sendTweet(CONSUMER_KEY,CONSUMER_SECRET,ACCESS_TOKEN,ACCESS_TOKEN_SECRET,twitter_message);
+        twitter_message = String.format("Testing this twitter rest api at %s, count = %d",(new Date()).toString(), i++);
+        conn.sendTweet(CONSUMER_KEY,CONSUMER_SECRET,ACCESS_TOKEN,ACCESS_TOKEN_SECRET,twitter_message);
+    }
+
+    @Test
+    public void testDirectMessage() throws TwitterException, IOException {
+        // get configuration
+        Path input = Paths.get(System.getProperty("user.home") + "/.twitterconnector.cfg");
+        Ini ini = new Ini().read(input);
+        Map<String, String> configs = ini.getSections().get("UnitTesting");
+
+        TwitterConnector conn = new TwitterConnector();
+        final String CONSUMER_KEY = configs.get("consumer_key");
+        final String CONSUMER_SECRET = configs.get("consumer_secret");
+        final String ACCESS_TOKEN = configs.get("access_token");
+        final String ACCESS_TOKEN_SECRET = configs.get("access_token_secret");
+        final String twitter_message = String.format("Testing this twitter direct message at %s",(new Date()).toString());
+
+        conn.sendDirectMessage(CONSUMER_KEY,CONSUMER_SECRET,ACCESS_TOKEN,ACCESS_TOKEN_SECRET,"andrkoel",twitter_message);
+    }
+
 }
