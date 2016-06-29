@@ -46,10 +46,16 @@ Configuration of the action:
 
 ## Development
 
-Development of this connector is done through a git project on Github.
+Development of this connector is done through a git project on [Github][10].
 
 All java jar dependencies are managed using an ivy file. You can download all
-dependencies by running runivy.cmd. This will save all jars in the userlib folder.
+dependencies by running runivy.cmd. This will save all jars in the userlib folder. There are two different
+scripts to run ivy:
+* runivy.cmd - downloads all dependencies required for running and testing the project
+* runivy-export.cmd - downloads only the dependencies required for distributing the connector mpk.
+
+Before you start to develop the connector you need to run runivy.cmd. After you validate everything works, run runivy-export.cmd.
+This will delete all jars in the userlib folder and only download the jars required for creating the connector mpk.
 
 This connector uses the unofficial [Twitter4j][6] twitter library.
 
@@ -72,6 +78,10 @@ This connector is licensed under the Apache v2 license.
 * Update twitter status action using oauth1
 * Added action to send direct message
 
+2016-jun-29 - revision 1.0.1
+
+* Changed name of message parameter in java action to avoid clashes with other objects
+
   [1]: docs/images/post_tweet_mf.png
   [2]: docs/images/configure_post_tweet.png
   [3]: https://dev.twitter.com/oauth/overview/application-owner-access-tokens
@@ -81,3 +91,4 @@ This connector is licensed under the Apache v2 license.
   [7]: docs/images/send_direct_message.png
   [8]: docs/images/configure_direct_message.png
   [9]: docs/images/twitter_toolbox.png
+  [10]: https://github.com/ako/TwitterConnector

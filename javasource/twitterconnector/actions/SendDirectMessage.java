@@ -22,9 +22,9 @@ public class SendDirectMessage extends CustomJavaAction<Boolean>
 	private String accessToken;
 	private String accessTokenSecret;
 	private String Recipient;
-	private String Message;
+	private String DirectMessage;
 
-	public SendDirectMessage(IContext context, String consumerKey, String consumerSecret, String accessToken, String accessTokenSecret, String Recipient, String Message)
+	public SendDirectMessage(IContext context, String consumerKey, String consumerSecret, String accessToken, String accessTokenSecret, String Recipient, String DirectMessage)
 	{
 		super(context);
 		this.consumerKey = consumerKey;
@@ -32,18 +32,18 @@ public class SendDirectMessage extends CustomJavaAction<Boolean>
 		this.accessToken = accessToken;
 		this.accessTokenSecret = accessTokenSecret;
 		this.Recipient = Recipient;
-		this.Message = Message;
+		this.DirectMessage = DirectMessage;
 	}
 
 	@Override
 	public Boolean executeAction() throws Exception
 	{
 		// BEGIN USER CODE
-		TwitterConnector connector = new TwitterConnector();
-		ILogNode logger = Core.getLogger(UpdateTwitterStatus.class.getName());
-		connector.setLogger(logger);
-		connector.sendDirectMessage(this.consumerKey, this.consumerSecret, this.accessToken, this.accessTokenSecret, this.Recipient , this.Message);
-		return true;
+        TwitterConnector connector = new TwitterConnector();
+        ILogNode logger = Core.getLogger(UpdateTwitterStatus.class.getName());
+        connector.setLogger(logger);
+        connector.sendDirectMessage(this.consumerKey, this.consumerSecret, this.accessToken, this.accessTokenSecret, this.Recipient, this.DirectMessage);
+        return true;
 		// END USER CODE
 	}
 

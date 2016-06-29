@@ -1,5 +1,4 @@
 .idea
-build
 deployment
 userlib/*
 .classpath

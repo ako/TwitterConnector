@@ -21,27 +21,27 @@ public class UpdateTwitterStatus extends CustomJavaAction<String>
 	private String consumerSecret;
 	private String accessToken;
 	private String accessTokenSecret;
-	private String Message;
+	private String TwitterMessage;
 
-	public UpdateTwitterStatus(IContext context, String consumerKey, String consumerSecret, String accessToken, String accessTokenSecret, String Message)
+	public UpdateTwitterStatus(IContext context, String consumerKey, String consumerSecret, String accessToken, String accessTokenSecret, String TwitterMessage)
 	{
 		super(context);
 		this.consumerKey = consumerKey;
 		this.consumerSecret = consumerSecret;
 		this.accessToken = accessToken;
 		this.accessTokenSecret = accessTokenSecret;
-		this.Message = Message;
+		this.TwitterMessage = TwitterMessage;
 	}
 
 	@Override
 	public String executeAction() throws Exception
 	{
 		// BEGIN USER CODE
-		TwitterConnector connector = new TwitterConnector();
-		ILogNode logger = Core.getLogger(UpdateTwitterStatus.class.getName());
-		connector.setLogger(logger);
-		String status = connector.sendTweet(this.consumerKey, this.consumerSecret, this.accessToken, this.accessTokenSecret, this.Message);
-		return status;
+        TwitterConnector connector = new TwitterConnector();
+        ILogNode logger = Core.getLogger(UpdateTwitterStatus.class.getName());
+        connector.setLogger(logger);
+        String status = connector.sendTweet(this.consumerKey, this.consumerSecret, this.accessToken, this.accessTokenSecret, this.TwitterMessage);
+        return status;
 		// END USER CODE
 	}
 
