@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This connector enables you to post twitter updates from your Mendix microflows.
+This connector enables you to post Twitter updates from your Mendix microflows.
 
 ## Usage
 
@@ -15,9 +15,9 @@ You can store this information in an entity or using constants.
 
 ### Update twitter status
 
-To post a twitter update, using a microflow as illustrated below. After
+To post a Twitter update, using a microflow as illustrated below. After
 including the connector from the appstore, you can drag and drop the
-*update twitter status* action from your toolbox on your microflow.
+*update Twitter status* action from your toolbox on your microflow.
 
 ![Twitter action in Mendix toolbox][9]
 
@@ -28,7 +28,7 @@ Here's an example how to use the action in a microflow:
 The action needs a few parameters:
 * ConsumerKey and consumerSecret as provided when you register your app with twitter.
 * AccessToken and accessTokenSecret which you can generate for the app.
-* The actual message you want to post to twitter.
+* The actual message you want to post to Twitter.
 
 ![Configure tweet action][2]
 
@@ -75,7 +75,7 @@ This connector is licensed under the Apache v2 license.
 
 2016-jun-16 - revision 1.0
 
-* Update twitter status action using oauth1
+* Update Twitter status action using oauth1
 * Added action to send direct message
 
 2016-jun-29 - revision 1.0.1
